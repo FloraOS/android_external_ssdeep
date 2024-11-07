@@ -1,0 +1,41 @@
+cc_library_host_static {
+    name: "libfuzzy_host",
+    srcs: [
+        "fuzzy.c",
+        "edit_dist.c",
+    ],
+    cflags: [
+        "-Wall",
+        "-O2",
+    ],
+    include_dirs: [
+        ".",
+    ],
+    
+    target: {
+       host: {
+          enabled: true
+      }
+    }
+}
+
+cc_library {
+    name: "libfuzzy",
+    srcs: [
+        "fuzzy.c",
+        "edit_dist.c",
+    ],
+    cflags: [
+        "-Wall",
+        "-O2",
+    ],
+    include_dirs: [
+        ".",
+    ],
+    
+    target: {
+       host: {
+          enabled: true
+      }
+    }
+}
